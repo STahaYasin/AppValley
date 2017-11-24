@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/scenes/startup.unity
+- path: Assets/scenes/s2-school-tuin.unity
   isLoaded: 1
   isActive: 1
