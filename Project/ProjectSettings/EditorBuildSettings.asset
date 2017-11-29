@@ -11,6 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/scenes/s2-school-tuin.unity
     guid: f0bf93a5af912a540b1a56fe5d665ea0
-  - enabled: 1
+  - enabled: 0
     path: Assets/scenes/s1.unity
     guid: 183cf7269a29433478a79fc44b9d61bc
