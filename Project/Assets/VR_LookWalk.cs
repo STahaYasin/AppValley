@@ -6,6 +6,7 @@ public class VR_LookWalk : MonoBehaviour {
 
     //VR Main Camera
     public Transform vrCamera;
+    public GameObject text;
 
     //Angle at which walk/stop will trigger.
     public float toggleAngle = 30.0f;
@@ -16,17 +17,20 @@ public class VR_LookWalk : MonoBehaviour {
 
     //CharacterController Script
     private CharacterController cc;
+    private TextMesh tt;
 
 	// Use this for initialization
 	void Start () {
         //Find the CharacterControll
         cc = GetComponent<CharacterController>();
+        tt = text.GetComponent<TextMesh>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         //Check to see if the head is rotated down to the toggleAngle, but not more than straight down.
-        if (vrCamera.eulerAngles.x >= toggleAngle && vrCamera.eulerAngles.x < 90.0f)
+        //if (tt != null) tt.text = vrCamera.transform.rotation.x + "° " + vrCamera.rotation.y + "° " + vrCamera.rotation.z + "°";
+        if (vrCamera.transform.rotation.x >= toggleAngle && vrCamera.transform.rotation.x < 90)
         {
             //Move forward
             moveforward = true;
@@ -40,10 +44,12 @@ public class VR_LookWalk : MonoBehaviour {
         if (moveforward == true)
         {
             //Find the forward direction.
-            Vector3 forward = vrCamera.TransformDirection(Vector3.forward);
+            Vector3 forward = gameObject.transform.forward;
 
             //Tell CharacterController to move forward.
+            if (tt != null) tt.text = "voor";
             cc.SimpleMove(forward * speed);
+            if (tt != null) tt.text = "na";
         }
 	}
 }

@@ -7,6 +7,7 @@ TagManager:
   - object
   - object-pos
   - object-neg
+  - floor
   layers:
   - Default
   - TransparentFX
