@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TheMagicWalker : MonoBehaviour {
 
+    
+
     public GameObject _camera;
     public GameObject _pijlPrefab;
     public GameObject _pijlInstance;
@@ -24,7 +26,6 @@ public class TheMagicWalker : MonoBehaviour {
         RaycastHit hit;
         if(Physics.Raycast(rayStart, forward, out hit, 50))
         {
-
             if(hit.collider.tag == "floor")
             {
                 if (_pijlInstance == null)
@@ -41,8 +42,8 @@ public class TheMagicWalker : MonoBehaviour {
                 if (xdis == 0) xdis = 0.01f;
                 double zdis = hit.point.z - transform.position.z;
                 if (zdis == 0) zdis = 0.01f;
-                double distance = System.Math.Sqrt(System.Math.Pow(xdis, 2) + System.Math.Pow(xdis, 2));
-
+                double distance = System.Math.Sqrt(System.Math.Pow(xdis, 2) + System.Math.Pow(zdis, 2)); 
+                
                 if (distance > 2)
                 {
                     _pijlInstance.transform.position = pos;
@@ -61,10 +62,12 @@ public class TheMagicWalker : MonoBehaviour {
                 }
                 else
                 {
+                    Debug.Log(distance);
                     pos = hit.point;
                     pos.x = hit.point.x;
                     pos.z = hit.point.z;
                     pos.y = hit.point.y - 15;
+                    Debug.Log(""+pos.ToString());
 
                     _pijlInstance.transform.position = pos;
                 }
