@@ -208,6 +208,7 @@
      <None Include="Assets\GoogleVR\Shaders\GvrUIOverlay.shader" />
      <None Include="Assets\GUI Animator\GUI Animator FREE\!How to.txt" />
      <None Include="Assets\GoogleVR\Plugins\Android\proguard-gvr.txt" />
+     <None Include="Assets\FantasyEnvironments\Environments\README.txt" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
      <None Include="Assets\GoogleVR\Plugins\Android\AndroidManifest-Cardboard.xml" />
      <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
