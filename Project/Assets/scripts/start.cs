@@ -5,8 +5,8 @@ using UnityEngine;
 public class start : MonoBehaviour
 {
 
-    private string pos_tag_name = "object-pos";
-    private string neg_tag_name = "object-neg";
+    private string pos_tag_name = "pos";
+    private string neg_tag_name = "neg";
 
     public GameObject rayPoint;
 

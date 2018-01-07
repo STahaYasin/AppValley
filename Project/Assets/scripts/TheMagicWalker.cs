@@ -22,7 +22,7 @@ public class TheMagicWalker : MonoBehaviour {
 
         Vector3 forward = _camera.transform.forward;
         Vector3 rayStart = _camera.transform.position;
-        Debug.DrawRay(rayStart, forward * 50, Color.blue);
+        //Debug.DrawRay(rayStart, forward * 50, Color.blue);
         RaycastHit hit;
         if(Physics.Raycast(rayStart, forward, out hit, 50))
         {

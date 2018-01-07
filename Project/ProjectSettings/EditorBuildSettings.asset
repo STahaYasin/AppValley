@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/scenes/startup.unity
     guid: 42d00f7dd4f7b6b4b9424c600a155c12
+  - enabled: 0
+    path: Assets/scenes/got.unity
+    guid: d92fa7b82191477449d8ce842b3963e9
   - enabled: 1
     path: Assets/scenes/speeltuin_01.unity
     guid: f36cb7b386ce83144ab9b65aa7bff358

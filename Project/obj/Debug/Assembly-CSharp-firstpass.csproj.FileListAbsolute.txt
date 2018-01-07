@@ -38,3 +38,5 @@ X:\Artesis Plantijn\3EA Semester 1\AppValley\SocialVR\AppValley\Project\obj\Debu
 X:\Artesis Plantijn\3EA Semester 1\AppValley\SocialVR\AppValley\Project\obj\Debug\Assembly-CSharp-firstpass.csproj.CoreCompileInputs.cache
 X:\Artesis Plantijn\3EA Semester 1\AppValley\SocialVR\AppValley\Project\obj\Debug\Assembly-CSharp-firstpass.dll
 X:\Artesis Plantijn\3EA Semester 1\AppValley\SocialVR\AppValley\Project\obj\Debug\Assembly-CSharp-firstpass.pdb
+X:\Artesis Plantijn\3EA Semester 1\AppValley\SocialVR\AppValley\Project\Temp\bin\Debug\GETween.dll
+X:\Artesis Plantijn\3EA Semester 1\AppValley\SocialVR\AppValley\Project\Temp\bin\Debug\GUIAnimatorFREE.dll

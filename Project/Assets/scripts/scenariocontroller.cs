@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 [System.Serializable]
 public class autoActionWithTimer
@@ -26,6 +27,7 @@ public class actionObject
 [RequireComponent(typeof(AudioSource))]
 public class scenariocontroller : MonoBehaviour
 {
+    public Transform userPos;
     public GameObject UserPoint;
     public GameObject rayPoint;
     private AudioSource audioSource;
@@ -49,6 +51,8 @@ public class scenariocontroller : MonoBehaviour
             return;
         }
 
+        userPos = user.GetComponent<Transform>();
+
         user.transform.position = UserPoint.transform.position;
         user.transform.rotation = UserPoint.transform.rotation;
     }
@@ -64,8 +68,9 @@ public class scenariocontroller : MonoBehaviour
     }
     void setupScenarioNeg()
     {
-        setupScenario(ActionPositive);
-        Destroy(gameObject);
+        if (ActionNegative == null) return;
+        setupScenario(ActionNegative);
+        //Destroy(gameObject);
     }
     void cannotSetupScenarion()
     {
@@ -76,6 +81,7 @@ public class scenariocontroller : MonoBehaviour
         if (nextObject == null)
         {
             cannotSetupScenarion();
+            Debug.Log("NULL ulaaannnnn");
             return;
         }
 
@@ -93,6 +99,7 @@ public class scenariocontroller : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("Update");
         if (AutoActionWithTimer.NextEnabled)
         {
             AutoActionWithTimer.TimerToEnter -= Time.deltaTime;
@@ -102,26 +109,26 @@ public class scenariocontroller : MonoBehaviour
             }
         }
 
-        if (rayPoint != null)
-        {
-            checkCollition();
-        }
+        checkCollition();
     }
     void checkCollition()
     {
         RaycastHit Hit = new RaycastHit();
-
-        if (Physics.Raycast(rayPoint.transform.position, rayPoint.transform.forward, out Hit, 250))
+        Debug.Log(rayPoint.transform.rotation.y);
+        Vector3 forward = rayPoint.transform.forward;
+        Debug.Log(forward.ToString());
+        if (Physics.Raycast(rayPoint.transform.position, forward, out Hit, 250))
         {
             Debug.Log("ray");
             Debug.DrawRay(rayPoint.transform.position, rayPoint.transform.forward * 250, Color.yellow);
 
-            if (Hit.transform.gameObject.tag == ActionPositive.tag && Input.GetButtonDown("Fire1"))
+            if (Hit.transform.gameObject.tag == "object-pos")
             {
+                //double distance = Vector3.Distance(Hit.transform.position, rayPoint.transform.position);
                 Debug.Log("P");
                 setupScenarioPos();
             }
-            else if (Hit.transform.gameObject.tag == ActionNegative.tag)
+            else if (Hit.transform.gameObject.tag == "object-neg")
             {
                 Debug.Log("N");
                 setupScenarioNeg();

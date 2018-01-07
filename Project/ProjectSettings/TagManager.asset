@@ -5,9 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - object
-  - object-pos
-  - object-neg
   - floor
+  - userpoint
+  - pos
+  - neg
   layers:
   - Default
   - TransparentFX
