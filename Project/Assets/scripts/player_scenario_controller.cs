@@ -26,6 +26,7 @@ public class player_scenario_controller : MonoBehaviour {
     
     void InstanciateScene()
     {
+        if (InstanciatedScene != null) Destroy(InstanciatedScene);
         InstanciatedScene = Instantiate(SceneToInstanciate, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
 
         OnInstanciatedScene();
@@ -34,7 +35,33 @@ public class player_scenario_controller : MonoBehaviour {
     {
         holder = InstanciatedScene.GetComponent<player_scenario_holder>();
 
+        if(holder.PlayAudioAtBegin != null && holder.PlayAudioAtBegin.enabled)
+        {
+            PlayAudioAtBegin(holder.PlayAudioAtBegin);
+        }
+
+        if (holder.ActionNeg.AutoAfterDelay)
+        {
+            StartCoroutine(waitForNewAction(holder.ActionNeg.DelayToAutoAction, holder.ActionNeg));
+        }
+        if (holder.ActionPos.AutoAfterDelay)
+        {
+            StartCoroutine(waitForNewAction(holder.ActionPos.DelayToAutoAction, holder.ActionPos));
+        }
+
         Debug.Log(holder.GetPos().tag);
+    }
+    void PlayAudioAtBegin(PlayAudio pl)
+    {
+        if (pl.Audio == null || pl.Source == null) return;
+
+        IEnumerator cor = waiter(pl.delayInSec, pl);
+        StartCoroutine(cor);
+
+    }
+    void PlayAudio(PlayAudio pl)
+    {
+        pl.Source.PlayOneShot(pl.Audio);
     }
     void CheckRayHit()
     {
@@ -82,5 +109,15 @@ public class player_scenario_controller : MonoBehaviour {
     {
         SceneToInstanciate = action.Scene;
         InstanciateScene();
+    }
+    IEnumerator waiter(float sec, PlayAudio pl)
+    {
+        yield return new WaitForSeconds(sec);
+        PlayAudio(pl);
+    }
+    IEnumerator waitForNewAction(float sec, ActionModel pl)
+    {
+        yield return new WaitForSeconds(sec);
+        Hit(pl);
     }
 }
