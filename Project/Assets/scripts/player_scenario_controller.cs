@@ -8,10 +8,14 @@ public class player_scenario_controller : MonoBehaviour {
     private RaycastHit hit;
     public int RayRange = 250;
 
+    public float DistanceToCheckPoint = 0;
+
     public GameObject SceneToInstanciate;
     public GameObject InstanciatedScene;
 
     player_scenario_holder holder;
+
+    private Coroutine cor;
 	
 	void Start () {
         hit = new RaycastHit();
@@ -22,6 +26,11 @@ public class player_scenario_controller : MonoBehaviour {
 
         if (holder == null) return;
         CheckRayHit();
+
+        if(holder.ActionMove != null && holder.ActionMove.enabled)
+        {
+            CheckDistance();
+        }
 	}
     
     void InstanciateScene()
@@ -35,6 +44,12 @@ public class player_scenario_controller : MonoBehaviour {
     {
         holder = InstanciatedScene.GetComponent<player_scenario_holder>();
 
+        if (holder.MoveUserToPoint != null)
+        {
+            gameObject.transform.position = holder.MoveUserToPoint.transform.position;
+            //TODO take the quaternion to;
+        }
+
         if(holder.PlayAudioAtBegin != null && holder.PlayAudioAtBegin.enabled)
         {
             PlayAudioAtBegin(holder.PlayAudioAtBegin);
@@ -42,11 +57,16 @@ public class player_scenario_controller : MonoBehaviour {
 
         if (holder.ActionNeg.AutoAfterDelay)
         {
-            StartCoroutine(waitForNewAction(holder.ActionNeg.DelayToAutoAction, holder.ActionNeg));
+            cor = StartCoroutine(waitForNewAction(holder.ActionNeg));
         }
         if (holder.ActionPos.AutoAfterDelay)
         {
-            StartCoroutine(waitForNewAction(holder.ActionPos.DelayToAutoAction, holder.ActionPos));
+            cor = StartCoroutine(waitForNewAction(holder.ActionPos));
+        }
+
+        if(holder.ActionMove != null && holder.ActionMove.enabled)
+        {
+            DistanceToCheckPoint = Vector3.Distance(this.transform.position, holder.ActionMove.DistanceCheckPoint.transform.position);
         }
 
         Debug.Log(holder.GetPos().tag);
@@ -62,6 +82,16 @@ public class player_scenario_controller : MonoBehaviour {
     void PlayAudio(PlayAudio pl)
     {
         pl.Source.PlayOneShot(pl.Audio);
+    }
+    void CheckDistance()
+    {
+        float newDistance = Vector3.Distance(this.transform.position, holder.ActionMove.DistanceCheckPoint.transform.position);
+        if((holder.ActionMove.actionAtComingCloser && (newDistance + holder.ActionMove.MaxDisToMove) < DistanceToCheckPoint) || (!holder.ActionMove.actionAtComingCloser && (newDistance - holder.ActionMove.MaxDisToMove) > DistanceToCheckPoint))
+        {
+            Debug.Log("User moved like expected to do an action!");
+            StopCoroutine(cor);
+            StartCoroutine(waitForNewAction(holder.ActionMove));
+        }
     }
     void CheckRayHit()
     {
@@ -105,8 +135,9 @@ public class player_scenario_controller : MonoBehaviour {
     {
         Hit(holder.ActionNeg);
     }
-    void Hit(ActionModel action)
+    void Hit(ActionSuper action)
     {
+        StopCoroutine(cor);
         SceneToInstanciate = action.Scene;
         InstanciateScene();
     }
@@ -115,9 +146,10 @@ public class player_scenario_controller : MonoBehaviour {
         yield return new WaitForSeconds(sec);
         PlayAudio(pl);
     }
-    IEnumerator waitForNewAction(float sec, ActionModel pl)
+    IEnumerator waitForNewAction(ActionSuper pl)
     {
-        yield return new WaitForSeconds(sec);
+        yield return new WaitForSeconds(pl.DelayToAutoAction);
+        Debug.Log("fvbfgbjk");
         Hit(pl);
     }
 }
