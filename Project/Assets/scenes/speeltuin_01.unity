@@ -1663,23 +1663,21 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_PrefabInternal: {fileID: 135225898}
---- !u!95 &135225900
-Animator:
-  serializedVersion: 3
+--- !u!111 &135225900
+Animation:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 135225899}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 79f132feef92b8243b1644c8a4aa6cb8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: d12db49b206da484ab2678906de3de23, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &143443679
 Prefab:
   m_ObjectHideFlags: 0
@@ -14811,6 +14809,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1282913369}
     m_Modifications:
+    - target: {fileID: 11100000, guid: d8d4886433160b44e82001b0fd209a2e, type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: d8d4886433160b44e82001b0fd209a2e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 262.18274
@@ -14845,8 +14847,24 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: d8d4886433160b44e82001b0fd209a2e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -123.62601
+      value: -142.1
       objectReference: {fileID: 0}
+    - target: {fileID: 100020, guid: d8d4886433160b44e82001b0fd209a2e, type: 3}
+      propertyPath: m_TagString
+      value: friends_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 11100000, guid: d8d4886433160b44e82001b0fd209a2e, type: 3}
+      propertyPath: m_Animations.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400000, guid: 4e2bb2fe48c379d48a5a46896b54e860, type: 2}
+    - target: {fileID: 11100000, guid: d8d4886433160b44e82001b0fd209a2e, type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11100000, guid: d8d4886433160b44e82001b0fd209a2e, type: 3}
+      propertyPath: m_Animations.Array.data[1]
+      value: 
+      objectReference: {fileID: 7400000, guid: 771f751198b842745bb62b0e0124574a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8d4886433160b44e82001b0fd209a2e, type: 3}
   m_IsPrefabParent: 0

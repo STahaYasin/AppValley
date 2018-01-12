@@ -171,21 +171,39 @@ public class player_scenario_controller : MonoBehaviour {
     IEnumerator WaitAndPlayAnimation(ActionModel_ pl)
     {
         yield return new WaitForSeconds(pl.PlayAudio_Delay);
-        playAnimation(pl);
         Coroutine c = StartCoroutine(StartAnim(pl));
         cors.Add(c);
+        //playArtikLan(pl);
     }
     IEnumerator StartAnim(ActionModel_ pl)
     {
-        Animator anim = thiss.GetComponent<Animator>();
-        anim.Play(pl.PlayAnimation_Animation.name);
+        Animation anim = null;
+
+        if (pl.Animator != null)
+        {
+            anim = pl.Animator;
+        }
+        else
+        {
+            anim = GameObject.FindGameObjectWithTag(pl.OrTag).GetComponent<Animation>();
+        }
+
+        if(anim != null)
+        {
+            anim.Play(pl.PlayAnimation_Animation.name);
+        }
         
         yield return new WaitForSeconds(pl.PlayAnimation_Animation.length);
-    }
-    void playAnimation(ActionModel_ pl)
-    {
-        Animator anim = GetComponent<Animator>();
 
+        if (pl.ActionAfterAnimation)
+        {
+            yield return new WaitForSeconds(pl.ActionAfterAnimationDelay);
+            Hit(pl);
+        }
+    }
+    void playArtikLan(ActionModel_ pl)
+    {
+        Animation anim = thiss.GetComponent<Animation>();
         anim.Play(pl.PlayAnimation_Animation.name);
     }
 }

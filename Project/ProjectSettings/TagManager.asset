@@ -8,7 +8,7 @@ TagManager:
   - floor
   - userpoint
   - pos
-  - neg
+  - friends_01
   layers:
   - Default
   - TransparentFX
@@ -19,7 +19,7 @@ TagManager:
   - 
   - 
   - flash
-  - 
+  - friends_01
   - 
   - 
   - 
