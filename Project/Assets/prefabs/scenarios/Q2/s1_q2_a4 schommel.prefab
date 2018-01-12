@@ -82,6 +82,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userStaysAtOldPos: 0
   MoveUserToPoint: {fileID: 1398623680401712}
-  Actions: []
+  Actions:
+  - Scene: {fileID: 1280156341273592, guid: a5d787db7d7e41e4eb64eb9590d0e47a, type: 2}
+    ActionWithRay_Enabled: 0
+    ActionWithRay_Tag: 
+    AutoAction_Enabled: 0
+    AutoAction_Delay: 0
+    ActionWhenMoved: 0
+    ActionCommingCloser: 0
+    ActionGettingFurther: 0
+    ActionWhenCloseEnaugh: 0
+    ActionWhenFarEnouf: 0
+    ActionDistance_Distance: 0
+    ActionDistance_DistanceAtStart: 0
+    ActionDistance_Point: {fileID: 0}
+    PlayAudio: 0
+    PlayAudio_Delay: 0
+    PlayAudio_Source: {fileID: 0}
+    PLayAudio_Audio: {fileID: 0}
+    PlayAnimation: 1
+    PlayAnimation_Delay: 0
+    PlayAnimation_Animation: {fileID: 7400000, guid: d12db49b206da484ab2678906de3de23,
+      type: 2}
+  - Scene: {fileID: 1280156341273592, guid: a5d787db7d7e41e4eb64eb9590d0e47a, type: 2}
+    ActionWithRay_Enabled: 0
+    ActionWithRay_Tag: 
+    AutoAction_Enabled: 1
+    AutoAction_Delay: 5
+    ActionWhenMoved: 0
+    ActionCommingCloser: 0
+    ActionGettingFurther: 0
+    ActionWhenCloseEnaugh: 0
+    ActionWhenFarEnouf: 0
+    ActionDistance_Distance: 0
+    ActionDistance_DistanceAtStart: 0
+    ActionDistance_Point: {fileID: 0}
+    PlayAudio: 0
+    PlayAudio_Delay: 0
+    PlayAudio_Source: {fileID: 0}
+    PLayAudio_Audio: {fileID: 0}
+    PlayAnimation: 0
+    PlayAnimation_Delay: 0
+    PlayAnimation_Animation: {fileID: 0}
   PlaysAudio: 0
   audio: {fileID: 0}

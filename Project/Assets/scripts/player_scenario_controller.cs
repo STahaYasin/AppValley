@@ -19,8 +19,11 @@ public class player_scenario_controller : MonoBehaviour {
     private Coroutine cor;
     private List<Coroutine> cors = new List<Coroutine>();
 
+    private GameObject thiss;
+
     void Start()
     {
+        thiss = this.gameObject;
         hit = new RaycastHit();
 
         InstanciateScene();
@@ -63,6 +66,13 @@ public class player_scenario_controller : MonoBehaviour {
             if (action.ActionWhenMoved)
             {
                 action.ActionDistance_DistanceAtStart = Vector3.Distance(this.transform.position, action.ActionDistance_Point.transform.position);
+            }
+
+            //Animation
+            if (action.PlayAnimation)
+            {
+                Coroutine c = StartCoroutine(WaitAndPlayAnimation(action));
+                cors.Add(c);
             }
         }
     }
@@ -157,5 +167,25 @@ public class player_scenario_controller : MonoBehaviour {
     {
         yield return new WaitForSeconds(pl.AutoAction_Delay);
         Hit(pl);
+    }
+    IEnumerator WaitAndPlayAnimation(ActionModel_ pl)
+    {
+        yield return new WaitForSeconds(pl.PlayAudio_Delay);
+        playAnimation(pl);
+        Coroutine c = StartCoroutine(StartAnim(pl));
+        cors.Add(c);
+    }
+    IEnumerator StartAnim(ActionModel_ pl)
+    {
+        Animator anim = thiss.GetComponent<Animator>();
+        anim.Play(pl.PlayAnimation_Animation.name);
+        
+        yield return new WaitForSeconds(pl.PlayAnimation_Animation.length);
+    }
+    void playAnimation(ActionModel_ pl)
+    {
+        Animator anim = GetComponent<Animator>();
+
+        anim.Play(pl.PlayAnimation_Animation.name);
     }
 }

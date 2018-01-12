@@ -46,7 +46,7 @@ public class ActionModel_
 
     public bool PlayAnimation = false;
     public float PlayAnimation_Delay = 0f;
-    public Animation PlayAnimation_Animation;
+    public AnimationClip PlayAnimation_Animation;
 }
 [System.Serializable]
 public class MoveActionodel: ActionSuper
