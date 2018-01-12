@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,22 +17,14 @@ public class player_scenario_controller : MonoBehaviour {
     player_scenario_holder holder;
 
     private Coroutine cor;
-	
-	void Start () {
+    private List<Coroutine> cors = new List<Coroutine>();
+
+    void Start()
+    {
         hit = new RaycastHit();
 
         InstanciateScene();
-	}
-	void Update () {
-
-        if (holder == null) return;
-        CheckRayHit();
-
-        if(holder.ActionMove != null && holder.ActionMove.enabled)
-        {
-            CheckDistance();
-        }
-	}
+    }
     
     void InstanciateScene()
     {
@@ -44,78 +37,94 @@ public class player_scenario_controller : MonoBehaviour {
     {
         holder = InstanciatedScene.GetComponent<player_scenario_holder>();
 
-        if (holder.MoveUserToPoint != null)
+        if (holder.MoveUserToPoint != null && !holder.userStaysAtOldPos)
         {
             gameObject.transform.position = holder.MoveUserToPoint.transform.position;
             //TODO take the quaternion to;
         }
 
-        if(holder.PlayAudioAtBegin != null && holder.PlayAudioAtBegin.enabled)
+        foreach(ActionModel_ action in holder.Actions)
         {
-            PlayAudioAtBegin(holder.PlayAudioAtBegin);
-        }
+            if (action == null) continue;
+            //Play audio per action
+            if(action.PlayAudio)
+            {
+                PlayAudioAtBegin(action);
+            }
 
-        if (holder.ActionNeg.AutoAfterDelay)
-        {
-            cor = StartCoroutine(waitForNewAction(holder.ActionNeg));
-        }
-        if (holder.ActionPos.AutoAfterDelay)
-        {
-            cor = StartCoroutine(waitForNewAction(holder.ActionPos));
-        }
+            //Auto actions
+            if (action.AutoAction_Enabled)
+            {
+                Coroutine c = StartCoroutine(WaitAndStartAction(action));
+                cors.Add(c);
+            }
 
-        if(holder.ActionMove != null && holder.ActionMove.enabled)
-        {
-            DistanceToCheckPoint = Vector3.Distance(this.transform.position, holder.ActionMove.DistanceCheckPoint.transform.position);
+            //Action when moved, set distance
+            if (action.ActionWhenMoved)
+            {
+                action.ActionDistance_DistanceAtStart = Vector3.Distance(this.transform.position, action.ActionDistance_Point.transform.position);
+            }
         }
-
-        Debug.Log(holder.GetPos().tag);
     }
-    void PlayAudioAtBegin(PlayAudio pl)
+    void Update()
     {
-        if (pl.Audio == null || pl.Source == null) return;
 
-        IEnumerator cor = waiter(pl.delayInSec, pl);
+        if (holder == null) return;
+
+        foreach (ActionModel_ action in holder.Actions)
+        {
+            if (action == null) continue;
+
+            if (action.ActionWithRay_Enabled)
+            {
+                CheckRayHit(action);
+            }
+
+            if (action.ActionWhenMoved)
+            {
+                CheckDistance(action);
+            }
+        }
+    }
+    void PlayAudioAtBegin(ActionModel_ pl)
+    {
+        if (pl.PLayAudio_Audio == null || pl.PlayAudio_Source == null) return;
+
+        IEnumerator cor = WaitAndPlayAudio(pl);
         StartCoroutine(cor);
 
     }
-    void PlayAudio(PlayAudio pl)
+    void PlayAudio(ActionModel_ pl)
     {
-        pl.Source.PlayOneShot(pl.Audio);
+        pl.PlayAudio_Source.PlayOneShot(pl.PLayAudio_Audio);
     }
-    void CheckDistance()
+    void CheckDistance(ActionModel_ action)
     {
-        float newDistance = Vector3.Distance(this.transform.position, holder.ActionMove.DistanceCheckPoint.transform.position);
-        if((holder.ActionMove.actionAtComingCloser && (newDistance + holder.ActionMove.MaxDisToMove) < DistanceToCheckPoint) || (!holder.ActionMove.actionAtComingCloser && (newDistance - holder.ActionMove.MaxDisToMove) > DistanceToCheckPoint))
+        float newDistance = Vector3.Distance(this.transform.position, action.ActionDistance_Point.transform.position);
+
+        if ((action.ActionWhenCloseEnaugh && newDistance <= action.ActionDistance_Distance) || (action.ActionWhenFarEnouf && newDistance > action.ActionDistance_Distance) || (action.ActionCommingCloser && newDistance + action.ActionDistance_Distance < action.ActionDistance_DistanceAtStart) || (action.ActionGettingFurther && newDistance - action.ActionDistance_Distance > action.ActionDistance_DistanceAtStart))
         {
-            Debug.Log("User moved like expected to do an action!");
-            StopCoroutine(cor);
-            StartCoroutine(waitForNewAction(holder.ActionMove));
+            Debug.Log("Distance check");
+            foreach (Coroutine cor in cors)
+            {
+                if (cor == null) continue;
+                StopCoroutine(cor);
+            }
+            StopAllCoroutines();
+
+            Hit(action);
         }
     }
-    void CheckRayHit()
+    void CheckRayHit(ActionModel_ action)
     {
-        if(RayPoint == null)
-        {
-            Debug.LogWarning("RayPoint == null!!");
-            return;
-        }
+        if (action == null || RayPoint == null) return;
 
         if(Physics.Raycast(RayPoint.transform.position, RayPoint.transform.forward, out hit, RayRange))
         {
-            if(hit.transform.gameObject.tag == holder.ActionPos.tag)
-            {
-                DrawRay(Color.green);
-                HitPos();
-            }
-            else if (hit.transform.gameObject.tag == holder.ActionNeg.tag)
+            if(hit.transform.gameObject.tag == action.ActionWithRay_Tag)
             {
                 DrawRay(Color.red);
-                HitNeg();
-            }
-            else
-            {
-                DrawRay(Color.yellow);
+                Hit(action);
             }
         }
         else
@@ -127,29 +136,26 @@ public class player_scenario_controller : MonoBehaviour {
     {
         Debug.DrawRay(RayPoint.transform.position, RayPoint.transform.forward * RayRange, color);
     }
-    void HitPos()
+    void Hit(ActionModel_ action)
     {
-        Hit(holder.ActionPos);
-    }
-    void HitNeg()
-    {
-        Hit(holder.ActionNeg);
-    }
-    void Hit(ActionSuper action)
-    {
-        StopCoroutine(cor);
+        foreach(Coroutine cor in cors)
+        {
+            if (cor == null) continue;
+            StopCoroutine(cor);
+        }
+        StopAllCoroutines();
+
         SceneToInstanciate = action.Scene;
         InstanciateScene();
     }
-    IEnumerator waiter(float sec, PlayAudio pl)
+    IEnumerator WaitAndPlayAudio(ActionModel_ pl)
     {
-        yield return new WaitForSeconds(sec);
+        yield return new WaitForSeconds(pl.PlayAudio_Delay);
         PlayAudio(pl);
     }
-    IEnumerator waitForNewAction(ActionSuper pl)
+    IEnumerator WaitAndStartAction(ActionModel_ pl)
     {
-        yield return new WaitForSeconds(pl.DelayToAutoAction);
-        Debug.Log("fvbfgbjk");
+        yield return new WaitForSeconds(pl.AutoAction_Delay);
         Hit(pl);
     }
 }
