@@ -25,6 +25,7 @@ public class ActionModel_
     public GameObject Scene;
 
     public bool ActionWithRay_Enabled = false;
+    public bool ActionWithRayAndClick_Enabled = false;
     public string ActionWithRay_Tag = "no tag action";
 
     public bool AutoAction_Enabled = false;
@@ -41,6 +42,8 @@ public class ActionModel_
 
     public bool PlayAudio = false;
     public float PlayAudio_Delay = 0f;
+    public bool PlayAudio_ActionAfterPlayingAudio = false;
+    public float PlayAudio_DelayActionPlayAfterAudio = 0f;
     public AudioSource PlayAudio_Source;
     public AudioClip PLayAudio_Audio;
 

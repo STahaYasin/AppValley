@@ -56,6 +56,7 @@ MonoBehaviour:
   Actions:
   - Scene: {fileID: 1859299771334714, guid: d7ccbbd2b41e68f4b9c932959abb106c, type: 2}
     ActionWithRay_Enabled: 0
+    ActionWithRayAndClick_Enabled: 0
     ActionWithRay_Tag: 
     AutoAction_Enabled: 0
     AutoAction_Delay: 0
@@ -72,7 +73,7 @@ MonoBehaviour:
     PlayAudio_Source: {fileID: 0}
     PLayAudio_Audio: {fileID: 0}
     PlayAnimation: 1
-    ActionAfterAnimationDelay: 3
+    ActionAfterAnimationDelay: 0
     PlayAnimation_Delay: 0
     ActionAfterAnimation: 1
     PlayAnimation_Animation: {fileID: 7400000, guid: 4e2bb2fe48c379d48a5a46896b54e860,

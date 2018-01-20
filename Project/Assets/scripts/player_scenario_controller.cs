@@ -131,7 +131,7 @@ public class player_scenario_controller : MonoBehaviour {
 
         if(Physics.Raycast(RayPoint.transform.position, RayPoint.transform.forward, out hit, RayRange))
         {
-            if(hit.transform.gameObject.tag == action.ActionWithRay_Tag)
+            if(hit.transform.gameObject.tag == action.ActionWithRay_Tag && (Input.GetButtonDown("Fire1") || !action.ActionWithRayAndClick_Enabled))
             {
                 DrawRay(Color.red);
                 Hit(action);
@@ -162,6 +162,12 @@ public class player_scenario_controller : MonoBehaviour {
     {
         yield return new WaitForSeconds(pl.PlayAudio_Delay);
         PlayAudio(pl);
+        yield return new WaitForSeconds(pl.PLayAudio_Audio.length);
+        if (pl.PlayAudio_ActionAfterPlayingAudio)
+        {
+            yield return new WaitForSeconds(pl.PlayAudio_DelayActionPlayAfterAudio);
+            Hit(pl);
+        }
     }
     IEnumerator WaitAndStartAction(ActionModel_ pl)
     {
