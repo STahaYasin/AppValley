@@ -45,9 +45,9 @@ public class ActionModel_
     public AudioClip PLayAudio_Audio;
 
     public bool PlayAnimation = false;
-    public bool ActionAfterAnimation = false;
     public float ActionAfterAnimationDelay = 0f;
     public float PlayAnimation_Delay = 0f;
+    public bool ActionAfterAnimation = false;
     public AnimationClip PlayAnimation_Animation;
     public Animation Animator;
     public string OrTag = "Player";

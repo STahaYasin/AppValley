@@ -9,6 +9,7 @@ TagManager:
   - userpoint
   - pos
   - friends_01
+  - neg
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 
   - flash
   - friends_01
-  - 
+  - hide_at_animation_schommel
   - 
   - 
   - 
