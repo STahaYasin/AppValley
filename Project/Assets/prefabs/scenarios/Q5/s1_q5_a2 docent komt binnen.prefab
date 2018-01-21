@@ -34,6 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4138860402273896}
+  - component: {fileID: 114044011579091222}
   m_Layer: 0
   m_Name: s1_q5_a2 docent komt binnen
   m_TagString: Untagged
@@ -48,7 +49,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1839243295197516}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 246.35019, y: 0.54638386, z: 275.22495}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4316480048762340}
@@ -62,9 +63,25 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1226664969038082}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.3098145, y: 1.0637605, z: -0.8371582}
+  m_LocalPosition: {x: 248.8, y: 1.0637605, z: 274.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4138860402273896}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114044011579091222
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1839243295197516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfafce8dd1289994facf3fc63b066e86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userStaysAtOldPos: 0
+  MoveUserToPoint: {fileID: 1226664969038082}
+  Actions: []
+  PlaysAudio: 0
+  audio: {fileID: 0}

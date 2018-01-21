@@ -1517,6 +1517,7 @@ MonoBehaviour:
   MoveUserToPoint: {fileID: 0}
   Actions:
   - Scene: {fileID: 0}
+    ScoreForThisAction: 0
     ActionWithRay_Enabled: 0
     ActionWithRayAndClick_Enabled: 0
     ActionWithRay_Tag: 
@@ -1532,9 +1533,12 @@ MonoBehaviour:
     ActionDistance_Point: {fileID: 0}
     PlayAudio: 1
     PlayAudio_Delay: 2
+    PlayAudio_ActionAfterPlayingAudio: 0
+    PlayAudio_DelayActionPlayAfterAudio: 0
     PlayAudio_Source: {fileID: 82898694933689258}
-    PLayAudio_Audio: {fileID: 8300000, guid: 2d6c76b36f29a7043a500558bdc80b99, type: 3}
+    PLayAudio_Audio: {fileID: 8300000, guid: 67872b7fc5cbada4aa73499899f393c0, type: 3}
     PlayAnimation: 0
+    Reverse: 0
     ActionAfterAnimationDelay: 0
     PlayAnimation_Delay: 0
     ActionAfterAnimation: 0
@@ -1542,6 +1546,7 @@ MonoBehaviour:
     Animator: {fileID: 0}
     OrTag: Player
   - Scene: {fileID: 1696662861699008, guid: 9a6d0ab2b5f21fd4dacac53897c96fc0, type: 2}
+    ScoreForThisAction: 0
     ActionWithRay_Enabled: 1
     ActionWithRayAndClick_Enabled: 0
     ActionWithRay_Tag: pos
@@ -1557,9 +1562,12 @@ MonoBehaviour:
     ActionDistance_Point: {fileID: 0}
     PlayAudio: 0
     PlayAudio_Delay: 0
+    PlayAudio_ActionAfterPlayingAudio: 0
+    PlayAudio_DelayActionPlayAfterAudio: 0
     PlayAudio_Source: {fileID: 0}
     PLayAudio_Audio: {fileID: 0}
     PlayAnimation: 0
+    Reverse: 0
     ActionAfterAnimationDelay: 0
     PlayAnimation_Delay: 0
     ActionAfterAnimation: 0
