@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class player_scenario_controller : MonoBehaviour {
 
+    public TextMesh ScoreBoard;
+    public int Score = 5;
+
     public GameObject RayPoint;
     private RaycastHit hit;
     public int RayRange = 250;
@@ -35,6 +38,8 @@ public class player_scenario_controller : MonoBehaviour {
         InstanciatedScene = Instantiate(SceneToInstanciate, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
 
         OnInstanciatedScene();
+
+        ScoreBoard.text = Score.ToString();
     }
     void OnInstanciatedScene()
     {
@@ -156,6 +161,7 @@ public class player_scenario_controller : MonoBehaviour {
         StopAllCoroutines();
 
         SceneToInstanciate = action.Scene;
+        Score += action.ScoreForThisAction;
         InstanciateScene();
     }
     IEnumerator WaitAndPlayAudio(ActionModel_ pl)

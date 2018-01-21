@@ -23,6 +23,7 @@ public class ActionModel: ActionSuper
 public class ActionModel_
 {
     public GameObject Scene;
+    public int ScoreForThisAction = 0;
 
     public bool ActionWithRay_Enabled = false;
     public bool ActionWithRayAndClick_Enabled = false;
