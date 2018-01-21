@@ -171,8 +171,6 @@ a90e94673f50d2237c1b971c138660c6 Assembly-CSharp-firstpass.dll:UnityStandardAsse
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:.ForcedReset
 57fde8e76fc7bce23deb0e799d336be7 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.SmoothFollow
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GvrPointerManager
-05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
-05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.MobileControlRig
 7b1e25dae21f10af340b2c5f2631d9bf Assembly-CSharp.dll:.GE_FantasySkyboxFREE_Demo
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GE_ToggleFullScreenUI
@@ -264,3 +262,5 @@ b2945430dfd6bbdb5d77043b47bf85e7 Assembly-CSharp.dll:.GvrControllerReticleVisual
 42057599834e76900d0987379e4fa2cd Assembly-CSharp.dll:.GA_FREE_Demo06
 d885ad79a6ef5bfe2ce10637aac0b8a0 Assembly-CSharp.dll:GoogleVR.VideoDemo.AutoPlayVideo
 0f3d4bb7128a287827d041c696039525 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.AutoMobileShaderSwitch
+8468affe9e898fe9501ec3665a2de2e4 Assembly-CSharp.dll:.deklikdoenereinde
+8468affe9e898fe9501ec3665a2de2e4 Assembly-CSharp.dll:.startend
