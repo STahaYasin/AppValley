@@ -84,6 +84,7 @@ MonoBehaviour:
   MoveUserToPoint: {fileID: 0}
   Actions:
   - Scene: {fileID: 0}
+    ScoreForThisAction: 0
     ActionWithRay_Enabled: 0
     ActionWithRayAndClick_Enabled: 0
     ActionWithRay_Tag: 
@@ -113,6 +114,7 @@ MonoBehaviour:
     Animator: {fileID: 0}
     OrTag: animdoc_1
   - Scene: {fileID: 1767757979377732, guid: b7a263e23c458bf41a086c7b0ceb37e4, type: 2}
+    ScoreForThisAction: 2
     ActionWithRay_Enabled: 0
     ActionWithRayAndClick_Enabled: 0
     ActionWithRay_Tag: 

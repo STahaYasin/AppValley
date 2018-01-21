@@ -260,6 +260,7 @@ MonoBehaviour:
   MoveUserToPoint: {fileID: 0}
   Actions:
   - Scene: {fileID: 1341585359684766, guid: 6ccee1aa523c25e4c8aa6db9c0811f24, type: 2}
+    ScoreForThisAction: 0
     ActionWithRay_Enabled: 0
     ActionWithRayAndClick_Enabled: 0
     ActionWithRay_Tag: 
@@ -278,7 +279,7 @@ MonoBehaviour:
     PlayAudio_ActionAfterPlayingAudio: 1
     PlayAudio_DelayActionPlayAfterAudio: 0.2
     PlayAudio_Source: {fileID: 82406043277014096}
-    PLayAudio_Audio: {fileID: 8300000, guid: 897f825aa83362c428184de87f133b6d, type: 3}
+    PLayAudio_Audio: {fileID: 8300000, guid: df09f1baa9ea89d4eae56aad175d5b40, type: 3}
     PlayAnimation: 0
     Reverse: 0
     ActionAfterAnimationDelay: 0

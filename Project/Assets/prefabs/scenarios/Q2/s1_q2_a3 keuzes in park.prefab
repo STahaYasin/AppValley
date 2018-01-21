@@ -435,6 +435,7 @@ MonoBehaviour:
   MoveUserToPoint: {fileID: 0}
   Actions:
   - Scene: {fileID: 1407857391930426, guid: 4336808f60c92284ca8f72d18a227039, type: 2}
+    ScoreForThisAction: 1
     ActionWithRay_Enabled: 0
     ActionWithRayAndClick_Enabled: 0
     ActionWithRay_Tag: 
@@ -463,6 +464,7 @@ MonoBehaviour:
     Animator: {fileID: 0}
     OrTag: Player
   - Scene: {fileID: 1524924309174350, guid: 59c737f1ba692314fb74fc3c51bf103a, type: 2}
+    ScoreForThisAction: -1
     ActionWithRay_Enabled: 0
     ActionWithRayAndClick_Enabled: 0
     ActionWithRay_Tag: 
@@ -491,6 +493,7 @@ MonoBehaviour:
     Animator: {fileID: 0}
     OrTag: Player
   - Scene: {fileID: 1904049625123700, guid: b7159e14d6e3c8f45b96c6dffc2016fe, type: 2}
+    ScoreForThisAction: -1
     ActionWithRay_Enabled: 0
     ActionWithRayAndClick_Enabled: 0
     ActionWithRay_Tag: 
@@ -519,6 +522,7 @@ MonoBehaviour:
     Animator: {fileID: 0}
     OrTag: Player
   - Scene: {fileID: 1504006666300396, guid: 60b5f4ee5a08e5d47abca88812948755, type: 2}
+    ScoreForThisAction: 2
     ActionWithRay_Enabled: 0
     ActionWithRayAndClick_Enabled: 0
     ActionWithRay_Tag: 

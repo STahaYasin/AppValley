@@ -223,7 +223,7 @@ MonoBehaviour:
     Animator: {fileID: 0}
     OrTag: 
   - Scene: {fileID: 1524242077498244, guid: 633dc966f82011842950e3a7f9b79322, type: 2}
-    ScoreForThisAction: 0
+    ScoreForThisAction: 1
     ActionWithRay_Enabled: 0
     ActionWithRayAndClick_Enabled: 0
     ActionWithRay_Tag: 

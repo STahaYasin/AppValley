@@ -1463,6 +1463,7 @@ MonoBehaviour:
   MoveUserToPoint: {fileID: 0}
   Actions:
   - Scene: {fileID: 0}
+    ScoreForThisAction: 0
     ActionWithRay_Enabled: 0
     ActionWithRayAndClick_Enabled: 0
     ActionWithRay_Tag: 
@@ -1491,6 +1492,7 @@ MonoBehaviour:
     Animator: {fileID: 0}
     OrTag: Player
   - Scene: {fileID: 1696662861699008, guid: 9a6d0ab2b5f21fd4dacac53897c96fc0, type: 2}
+    ScoreForThisAction: 1
     ActionWithRay_Enabled: 0
     ActionWithRayAndClick_Enabled: 0
     ActionWithRay_Tag: 

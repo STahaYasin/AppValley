@@ -1772,7 +1772,7 @@ MonoBehaviour:
     Animator: {fileID: 0}
     OrTag: Player
   - Scene: {fileID: 1685647308357694, guid: 8e7a6a09bac14164ab5e39f0deca4703, type: 2}
-    ScoreForThisAction: 0
+    ScoreForThisAction: -1
     ActionWithRay_Enabled: 0
     ActionWithRayAndClick_Enabled: 0
     ActionWithRay_Tag: 
@@ -1801,7 +1801,7 @@ MonoBehaviour:
     Animator: {fileID: 0}
     OrTag: Player
   - Scene: {fileID: 1158030775553248, guid: fb18848fec032404a802de2e4475b989, type: 2}
-    ScoreForThisAction: 0
+    ScoreForThisAction: -1
     ActionWithRay_Enabled: 1
     ActionWithRayAndClick_Enabled: 0
     ActionWithRay_Tag: neg

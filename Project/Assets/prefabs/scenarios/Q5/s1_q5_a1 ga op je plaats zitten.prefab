@@ -150,6 +150,7 @@ MonoBehaviour:
   MoveUserToPoint: {fileID: 0}
   Actions:
   - Scene: {fileID: 1839243295197516, guid: 91b621d1e9cff2941b9477957f524312, type: 2}
+    ScoreForThisAction: 1
     ActionWithRay_Enabled: 0
     ActionWithRayAndClick_Enabled: 0
     ActionWithRay_Tag: 
