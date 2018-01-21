@@ -1786,6 +1786,12 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 1102622882356275946}
     m_Position: {x: 923, y: 1013, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1102250124099612656}
+    m_Position: {x: 958, y: 1078, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1102784959571464152}
+    m_Position: {x: 993, y: 1143, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 110145512}
@@ -2131,6 +2137,31 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1102 &1102250124099612656
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: docent_gaat_naar_rij
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 0}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &1102622882356275946
 AnimatorState:
   serializedVersion: 5
@@ -2151,6 +2182,31 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: d4927c7686dbc284e90085dc358afbe0, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &1102784959571464152
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: docentgaatnaarklas
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 694ac52ba08963f45ad98e8a176848d9, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

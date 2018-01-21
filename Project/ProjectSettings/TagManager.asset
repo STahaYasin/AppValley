@@ -12,6 +12,7 @@ TagManager:
   - neg
   - object-neg
   - rootanim
+  - animdoc_1
   layers:
   - Default
   - TransparentFX

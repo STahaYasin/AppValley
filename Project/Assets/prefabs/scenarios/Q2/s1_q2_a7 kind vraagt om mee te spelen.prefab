@@ -183,8 +183,9 @@ MonoBehaviour:
     PlayAudio_ActionAfterPlayingAudio: 1
     PlayAudio_DelayActionPlayAfterAudio: 0.5
     PlayAudio_Source: {fileID: 82812230613245908}
-    PLayAudio_Audio: {fileID: 8300000, guid: 984e06cd2aca8b74dac9b7ac3f277b78, type: 3}
+    PLayAudio_Audio: {fileID: 8300000, guid: 610fca8b361eee04abe1ccd5d462ee8c, type: 3}
     PlayAnimation: 0
+    Reverse: 0
     ActionAfterAnimationDelay: 0
     PlayAnimation_Delay: 0
     ActionAfterAnimation: 0

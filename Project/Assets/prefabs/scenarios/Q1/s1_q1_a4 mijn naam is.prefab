@@ -1598,7 +1598,7 @@ MonoBehaviour:
   userStaysAtOldPos: 1
   MoveUserToPoint: {fileID: 1942491423317510}
   Actions:
-  - Scene: {fileID: 0}
+  - Scene: {fileID: 1681747881524864, guid: 2831610ff7bad7d4fb41aa001e7c51fa, type: 2}
     ActionWithRay_Enabled: 0
     ActionWithRayAndClick_Enabled: 0
     ActionWithRay_Tag: 
@@ -1614,34 +1614,12 @@ MonoBehaviour:
     ActionDistance_Point: {fileID: 0}
     PlayAudio: 1
     PlayAudio_Delay: 0.2
+    PlayAudio_ActionAfterPlayingAudio: 1
+    PlayAudio_DelayActionPlayAfterAudio: 0
     PlayAudio_Source: {fileID: 82020739836540102}
-    PLayAudio_Audio: {fileID: 8300000, guid: f2dbb5f05deb16446b3f225de01768f1, type: 3}
+    PLayAudio_Audio: {fileID: 8300000, guid: bcb53be5b287c58479945f16b70d964c, type: 3}
     PlayAnimation: 0
-    ActionAfterAnimationDelay: 0
-    PlayAnimation_Delay: 0
-    ActionAfterAnimation: 0
-    PlayAnimation_Animation: {fileID: 0}
-    Animator: {fileID: 0}
-    OrTag: Player
-  - Scene: {fileID: 1681747881524864, guid: 2831610ff7bad7d4fb41aa001e7c51fa, type: 2}
-    ActionWithRay_Enabled: 0
-    ActionWithRayAndClick_Enabled: 0
-    ActionWithRay_Tag: 
-    AutoAction_Enabled: 1
-    AutoAction_Delay: 2
-    ActionWhenMoved: 0
-    ActionCommingCloser: 0
-    ActionGettingFurther: 0
-    ActionWhenCloseEnaugh: 0
-    ActionWhenFarEnouf: 0
-    ActionDistance_Distance: 0
-    ActionDistance_DistanceAtStart: 0
-    ActionDistance_Point: {fileID: 0}
-    PlayAudio: 0
-    PlayAudio_Delay: 0
-    PlayAudio_Source: {fileID: 0}
-    PLayAudio_Audio: {fileID: 0}
-    PlayAnimation: 0
+    Reverse: 0
     ActionAfterAnimationDelay: 0
     PlayAnimation_Delay: 0
     ActionAfterAnimation: 0

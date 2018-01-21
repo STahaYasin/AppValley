@@ -1,0 +1,201 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1341585359684766}
+  m_IsPrefabParent: 1
+--- !u!1 &1084940060484048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4652743714310690}
+  m_Layer: 0
+  m_Name: point voor deur
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1341585359684766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4206891283684830}
+  - component: {fileID: 114656142344778610}
+  m_Layer: 0
+  m_Name: s1_q3_a2 docent gaat naar rij
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1398114858151258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4799176989040314}
+  m_Layer: 0
+  m_Name: point in rij
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4206891283684830
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1341585359684766}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4799176989040314}
+  - {fileID: 4652743714310690}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4652743714310690
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1084940060484048}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 256.54, y: 1.86, z: 279.84}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4206891283684830}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4799176989040314
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1398114858151258}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 251.25, y: 0.7, z: 283.55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4206891283684830}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114656142344778610
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1341585359684766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfafce8dd1289994facf3fc63b066e86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userStaysAtOldPos: 0
+  MoveUserToPoint: {fileID: 0}
+  Actions:
+  - Scene: {fileID: 0}
+    ActionWithRay_Enabled: 0
+    ActionWithRayAndClick_Enabled: 0
+    ActionWithRay_Tag: 
+    AutoAction_Enabled: 0
+    AutoAction_Delay: 0
+    ActionWhenMoved: 0
+    ActionCommingCloser: 0
+    ActionGettingFurther: 0
+    ActionWhenCloseEnaugh: 0
+    ActionWhenFarEnouf: 0
+    ActionDistance_Distance: 0
+    ActionDistance_DistanceAtStart: 0
+    ActionDistance_Point: {fileID: 0}
+    PlayAudio: 0
+    PlayAudio_Delay: 0
+    PlayAudio_ActionAfterPlayingAudio: 0
+    PlayAudio_DelayActionPlayAfterAudio: 0
+    PlayAudio_Source: {fileID: 0}
+    PLayAudio_Audio: {fileID: 0}
+    PlayAnimation: 1
+    Reverse: 0
+    ActionAfterAnimationDelay: 0
+    PlayAnimation_Delay: 0
+    ActionAfterAnimation: 0
+    PlayAnimation_Animation: {fileID: 7400000, guid: 22141a600193de7488e5fd110382a0e7,
+      type: 2}
+    Animator: {fileID: 0}
+    OrTag: animdoc_1
+  - Scene: {fileID: 1524242077498244, guid: 633dc966f82011842950e3a7f9b79322, type: 2}
+    ActionWithRay_Enabled: 0
+    ActionWithRayAndClick_Enabled: 0
+    ActionWithRay_Tag: 
+    AutoAction_Enabled: 0
+    AutoAction_Delay: 0
+    ActionWhenMoved: 1
+    ActionCommingCloser: 0
+    ActionGettingFurther: 0
+    ActionWhenCloseEnaugh: 1
+    ActionWhenFarEnouf: 0
+    ActionDistance_Distance: 5
+    ActionDistance_DistanceAtStart: 0
+    ActionDistance_Point: {fileID: 1398114858151258}
+    PlayAudio: 0
+    PlayAudio_Delay: 0
+    PlayAudio_ActionAfterPlayingAudio: 0
+    PlayAudio_DelayActionPlayAfterAudio: 0
+    PlayAudio_Source: {fileID: 0}
+    PLayAudio_Audio: {fileID: 0}
+    PlayAnimation: 0
+    Reverse: 0
+    ActionAfterAnimationDelay: 0
+    PlayAnimation_Delay: 0
+    ActionAfterAnimation: 0
+    PlayAnimation_Animation: {fileID: 0}
+    Animator: {fileID: 0}
+    OrTag: 
+  - Scene: {fileID: 1274567400556300, guid: 9542f9bee35f37949a6f7885f6b6f8c9, type: 2}
+    ActionWithRay_Enabled: 0
+    ActionWithRayAndClick_Enabled: 0
+    ActionWithRay_Tag: 
+    AutoAction_Enabled: 0
+    AutoAction_Delay: 0
+    ActionWhenMoved: 1
+    ActionCommingCloser: 0
+    ActionGettingFurther: 0
+    ActionWhenCloseEnaugh: 1
+    ActionWhenFarEnouf: 0
+    ActionDistance_Distance: 5
+    ActionDistance_DistanceAtStart: 0
+    ActionDistance_Point: {fileID: 1084940060484048}
+    PlayAudio: 0
+    PlayAudio_Delay: 0
+    PlayAudio_ActionAfterPlayingAudio: 0
+    PlayAudio_DelayActionPlayAfterAudio: 0
+    PlayAudio_Source: {fileID: 0}
+    PLayAudio_Audio: {fileID: 0}
+    PlayAnimation: 0
+    Reverse: 0
+    ActionAfterAnimationDelay: 0
+    PlayAnimation_Delay: 0
+    ActionAfterAnimation: 0
+    PlayAnimation_Animation: {fileID: 0}
+    Animator: {fileID: 0}
+    OrTag: 
+  PlaysAudio: 0
+  audio: {fileID: 0}

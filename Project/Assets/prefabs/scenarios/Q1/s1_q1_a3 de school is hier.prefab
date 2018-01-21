@@ -1478,9 +1478,12 @@ MonoBehaviour:
     ActionDistance_Point: {fileID: 0}
     PlayAudio: 1
     PlayAudio_Delay: 1
+    PlayAudio_ActionAfterPlayingAudio: 0
+    PlayAudio_DelayActionPlayAfterAudio: 0
     PlayAudio_Source: {fileID: 82098149078191812}
-    PLayAudio_Audio: {fileID: 8300000, guid: a77833680aafa0b448199f6b676459e5, type: 3}
+    PLayAudio_Audio: {fileID: 8300000, guid: 67872b7fc5cbada4aa73499899f393c0, type: 3}
     PlayAnimation: 0
+    Reverse: 0
     ActionAfterAnimationDelay: 0
     PlayAnimation_Delay: 0
     ActionAfterAnimation: 0
@@ -1503,9 +1506,12 @@ MonoBehaviour:
     ActionDistance_Point: {fileID: 1566636067772038}
     PlayAudio: 0
     PlayAudio_Delay: 0
+    PlayAudio_ActionAfterPlayingAudio: 0
+    PlayAudio_DelayActionPlayAfterAudio: 0
     PlayAudio_Source: {fileID: 0}
     PLayAudio_Audio: {fileID: 0}
     PlayAnimation: 0
+    Reverse: 0
     ActionAfterAnimationDelay: 0
     PlayAnimation_Delay: 0
     ActionAfterAnimation: 0
