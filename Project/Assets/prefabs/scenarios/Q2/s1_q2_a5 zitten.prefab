@@ -82,6 +82,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userStaysAtOldPos: 0
   MoveUserToPoint: {fileID: 1700848267328696}
-  Actions: []
+  Actions:
+  - Scene: {fileID: 1346771231661714, guid: 8b198273f6c150a468152dd59df6d3d7, type: 2}
+    ActionWithRay_Enabled: 0
+    ActionWithRayAndClick_Enabled: 0
+    ActionWithRay_Tag: 
+    AutoAction_Enabled: 1
+    AutoAction_Delay: 5
+    ActionWhenMoved: 0
+    ActionCommingCloser: 0
+    ActionGettingFurther: 0
+    ActionWhenCloseEnaugh: 0
+    ActionWhenFarEnouf: 0
+    ActionDistance_Distance: 0
+    ActionDistance_DistanceAtStart: 0
+    ActionDistance_Point: {fileID: 0}
+    PlayAudio: 0
+    PlayAudio_Delay: 0
+    PlayAudio_ActionAfterPlayingAudio: 0
+    PlayAudio_DelayActionPlayAfterAudio: 0
+    PlayAudio_Source: {fileID: 0}
+    PLayAudio_Audio: {fileID: 0}
+    PlayAnimation: 0
+    ActionAfterAnimationDelay: 0
+    PlayAnimation_Delay: 0
+    ActionAfterAnimation: 0
+    PlayAnimation_Animation: {fileID: 0}
+    Animator: {fileID: 0}
+    OrTag: 
   PlaysAudio: 0
   audio: {fileID: 0}

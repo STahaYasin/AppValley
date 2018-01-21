@@ -196,6 +196,15 @@ public class player_scenario_controller : MonoBehaviour {
 
         if(anim != null)
         {
+            /*if (pl.Reverse)
+            {
+                anim[pl.PlayAnimation_Animation.name].speed = -1;
+            }
+            else
+            {
+                anim[pl.PlayAnimation_Animation.name].speed = 1;
+            }*/
+
             anim.Play(pl.PlayAnimation_Animation.name);
         }
         

@@ -10,6 +10,8 @@ TagManager:
   - pos
   - friends_01
   - neg
+  - object-neg
+  - rootanim
   layers:
   - Default
   - TransparentFX

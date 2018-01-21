@@ -70,13 +70,15 @@ MonoBehaviour:
     ActionDistance_Point: {fileID: 0}
     PlayAudio: 0
     PlayAudio_Delay: 0
+    PlayAudio_ActionAfterPlayingAudio: 0
+    PlayAudio_DelayActionPlayAfterAudio: 0
     PlayAudio_Source: {fileID: 0}
     PLayAudio_Audio: {fileID: 0}
     PlayAnimation: 1
     ActionAfterAnimationDelay: 0
     PlayAnimation_Delay: 0
     ActionAfterAnimation: 1
-    PlayAnimation_Animation: {fileID: 7400000, guid: 4e2bb2fe48c379d48a5a46896b54e860,
+    PlayAnimation_Animation: {fileID: 7400000, guid: 99b3acf04317e5143890abd0ff7bb430,
       type: 2}
     Animator: {fileID: 0}
     OrTag: friends_01

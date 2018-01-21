@@ -80,11 +80,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfafce8dd1289994facf3fc63b066e86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userStaysAtOldPos: 0
+  userStaysAtOldPos: 1
   MoveUserToPoint: {fileID: 1398623680401712}
   Actions:
   - Scene: {fileID: 1280156341273592, guid: a5d787db7d7e41e4eb64eb9590d0e47a, type: 2}
     ActionWithRay_Enabled: 0
+    ActionWithRayAndClick_Enabled: 0
     ActionWithRay_Tag: 
     AutoAction_Enabled: 0
     AutoAction_Delay: 0
@@ -98,20 +99,22 @@ MonoBehaviour:
     ActionDistance_Point: {fileID: 0}
     PlayAudio: 0
     PlayAudio_Delay: 0
+    PlayAudio_ActionAfterPlayingAudio: 0
+    PlayAudio_DelayActionPlayAfterAudio: 0
     PlayAudio_Source: {fileID: 0}
     PLayAudio_Audio: {fileID: 0}
     PlayAnimation: 1
+    Reverse: 0
     ActionAfterAnimationDelay: 0
     PlayAnimation_Delay: 0
     ActionAfterAnimation: 0
-    gameObjectsToHide:
-    - {fileID: 0}
-    PlayAnimation_Animation: {fileID: 7400000, guid: d12db49b206da484ab2678906de3de23,
+    PlayAnimation_Animation: {fileID: 7400000, guid: a06670f23e0fc1c4294e157a1ccd26af,
       type: 2}
     Animator: {fileID: 0}
-    OrTag: Player
+    OrTag: rootanim
   - Scene: {fileID: 1280156341273592, guid: a5d787db7d7e41e4eb64eb9590d0e47a, type: 2}
     ActionWithRay_Enabled: 0
+    ActionWithRayAndClick_Enabled: 0
     ActionWithRay_Tag: 
     AutoAction_Enabled: 1
     AutoAction_Delay: 5
@@ -125,13 +128,15 @@ MonoBehaviour:
     ActionDistance_Point: {fileID: 0}
     PlayAudio: 0
     PlayAudio_Delay: 0
+    PlayAudio_ActionAfterPlayingAudio: 0
+    PlayAudio_DelayActionPlayAfterAudio: 0
     PlayAudio_Source: {fileID: 0}
     PLayAudio_Audio: {fileID: 0}
     PlayAnimation: 0
+    Reverse: 0
     ActionAfterAnimationDelay: 0
     PlayAnimation_Delay: 0
     ActionAfterAnimation: 0
-    gameObjectsToHide: []
     PlayAnimation_Animation: {fileID: 0}
     Animator: {fileID: 0}
     OrTag: player
